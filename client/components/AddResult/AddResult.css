@@ -1,0 +1,51 @@
+.addressResult {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.addressResult_Option {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  font: 1.5em;
+}
+
+.addressResult_Option:hover {
+  background-color: black;
+  color: white;
+}
+
+.addressSelected {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.addressSelected_title {
+  text-transform: uppercase;
+  font-size: 2rem;
+  flex-grow: 0;
+  align-self: center;
+  color: white;
+}
+
+.addressSelected_location {
+  text-transform: uppercase;
+  font-size: 2rem;
+  background-color: black;
+  color: white;
+  flex-grow: 1;
+  align-self: center;
+  outline: none;
+  border: none;
+}
+
+.addressSelected_button {
+  font-size: 2rem;
+  flex-grow: 0;
+  background-color: red;
+  color: white;
+  align-self: center;
+}

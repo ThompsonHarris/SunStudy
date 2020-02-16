@@ -1,0 +1,35 @@
+.GridRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 4rem;
+  width: 100%;
+}
+
+.GridUnit {
+  background-color: lightgreen;
+  border: 0.2rem solid black;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.GridUnit span {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  align-self: center;
+}
+
+.GridUnit:hover {
+  background-color: blue;
+}
+
+.GridBlock {
+  background-color: brown;
+}
+
+.GridShadow {
+  background-color: rgb(68, 66, 66);
+}
