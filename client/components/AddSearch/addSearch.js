@@ -35,32 +35,37 @@ class AddSearch extends React.Component {
 
   render() {
     return (
-      <div>
-        <form className="addressInput">
-          <label className="addressInput_label">Input Location</label>
-          <input
-            className="addressInput_input"
-            type="text"
-            value={this.state.address}
-            placeholder="Input desired location"
-            onChange={e => this.onChangeHandle(e)}
-          />
-          <button
-            className="addressInput_button"
-            type={"submit"}
-            onClick={e => {
-              this.onCLickHandle(e);
-            }}
-          >
-            SEARCH
-          </button>
-        </form>
-      </div>
+      <>
+        {this.props.layoutDimensions.width === 0 ? (
+          <div>
+            <form className="addressInput">
+              <label className="addressInput_label">Input Location</label>
+              <input
+                className="addressInput_input"
+                type="text"
+                value={this.state.address}
+                placeholder="Input desired location"
+                onChange={e => this.onChangeHandle(e)}
+              />
+              <button
+                className="addressInput_button"
+                type={"submit"}
+                onClick={e => {
+                  this.onCLickHandle(e);
+                }}
+              >
+                SEARCH
+              </button>
+            </form>
+          </div>
+        ) : null}
+      </>
     );
   }
 }
 
 const mapStateToProps = ({ nav }) => ({
+  layoutDimensions: nav.layoutDimensions,
   LogNLat: nav.LogNLat
 });
 

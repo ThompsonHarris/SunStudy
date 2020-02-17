@@ -2,24 +2,25 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 4rem;
+  height: 2rem;
   width: 100%;
 }
 
 .GridUnit {
-  background-color: lightgreen;
-  border: 0.2rem solid black;
-  width: 4rem;
-  height: 4rem;
+  background-color: rgb(174, 211, 73);
+  border: 0.01rem solid black;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   justify-content: center;
 }
 
 .GridUnit span {
-  color: white;
-  font-size: 3rem;
+  color: black;
+  font-size: 1rem;
   font-weight: bold;
   align-self: center;
+  user-select: none;
 }
 
 .GridUnit:hover {
@@ -27,9 +28,53 @@
 }
 
 .GridBlock {
-  background-color: brown;
+  background-color: rgb(255, 255, 255);
 }
 
 .GridShadow {
   background-color: rgb(68, 66, 66);
+}
+
+.GridNight {
+  background-color: rgb(12, 12, 58);
+}
+
+.violet {
+  background-color: rgb(29, 18, 129);
+}
+.darkpurple {
+  background-color: rgb(38, 56, 155);
+}
+.mediumpurple {
+  background-color: rgb(32, 79, 133);
+}
+.lightpurple {
+  background-color: rgb(29, 89, 117);
+}
+.redpurple {
+  background-color: rgb(26, 111, 117);
+}
+.darkred {
+  background-color: rgb(37, 116, 102);
+}
+.mediumred {
+  background-color: rgb(41, 129, 103);
+}
+.lightred {
+  background-color: rgb(47, 141, 86);
+}
+.orangered {
+  background-color: rgb(56, 163, 83);
+}
+.yelloworange {
+  background-color: rgb(54, 189, 83);
+}
+.yellow {
+  background-color: rgb(64, 192, 64);
+}
+.yellowgreen {
+  background-color: rgb(92, 201, 82);
+}
+.lightgreen {
+  background-color: rgb(135, 211, 73);
 }

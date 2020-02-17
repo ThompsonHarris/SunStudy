@@ -1,20 +1,19 @@
 //utils
 import SunCalc from "suncalc2";
 
+const PI = 3.14159265358979323846;
+
 export const sunPos = (date, lat, lng) => {
   const sunPos = SunCalc.getPosition(date, lat, lng);
-  const ActualSunPositionRad = sunPos.azimuth + 3.1415;
+  const ActualSunPositionRad = sunPos.azimuth + PI;
   const Altitude = sunPos.altitude;
   const azimuthDegree = () => {
-    if ((ActualSunPositionRad + 3.1415) * (180 / 3.1415) > 360) {
-      return ((ActualSunPositionRad + 3.1415) * (180 / 3.1415)) % 360;
-    } else {
-      return (ActualSunPositionRad + 3.1415) * (180 / 3.1415);
-    }
+    return ((ActualSunPositionRad + PI) * (180 / PI)) % 360;
   };
   return {
     azimuth: ActualSunPositionRad,
     altitude: Altitude,
-    azimuthDegree: azimuthDegree()
+    azimuthDegree: azimuthDegree(),
+    date: date
   };
 };

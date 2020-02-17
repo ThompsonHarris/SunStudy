@@ -1,12 +1,23 @@
 import { NavTypes } from "../types/nav.types";
 //utils
-import { modifyCord, renderedGrid } from "../Utils/NavUtils";
+import {
+  modifyCord,
+  renderedGrid,
+  renderHeatmap,
+  modifyOverCord
+} from "../Utils/NavUtils";
 
 const INITIAL_STATE = {
   isFetching: false,
   LogNLat: {
     name: "",
-    data: []
+    data: [],
+    sunPos: {
+      azimuth: 0,
+      altitude: 0,
+      azimuthDegree: 0,
+      date: ""
+    }
   },
   LocationData: [
     {
@@ -15,7 +26,10 @@ const INITIAL_STATE = {
   ],
   errorMessage: {},
   layoutDimensions: { width: 0, height: 0 },
-  Grid: []
+  Grid: [],
+  Heatmap: {
+    range: []
+  }
 };
 
 export const navReducer = (state = INITIAL_STATE, action) => {
@@ -30,7 +44,13 @@ export const navReducer = (state = INITIAL_STATE, action) => {
         ...state,
         LogNLat: {
           name: "",
-          data: []
+          data: [],
+          sunPos: {
+            azimuth: 0,
+            altitude: 0,
+            azimuthDegree: 0,
+            date: ""
+          }
         },
         LocationData: [
           {
@@ -53,10 +73,25 @@ export const navReducer = (state = INITIAL_STATE, action) => {
         ...state,
         Grid: renderedGrid(state.Grid, action.payload)
       };
+    case NavTypes.RENDER_HEATMAP:
+      return {
+        ...state,
+        Grid: renderHeatmap(state.Grid, action.payload, state.LogNLat.data)
+      };
     case NavTypes.MOD_CORD:
       return {
         ...state,
         Grid: modifyCord(state.Grid, action.payload)
+      };
+    case NavTypes.MOD_OVER_CORD:
+      return {
+        ...state,
+        Grid: modifyOverCord(state.Grid, action.payload)
+      };
+    case NavTypes.SET_HEATMAP_RANGE:
+      return {
+        ...state,
+        Heatmap: { range: action.payload }
       };
     case NavTypes.FETCH_LOCATION_START:
       return {

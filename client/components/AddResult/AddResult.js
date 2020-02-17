@@ -48,15 +48,17 @@ class AddResult extends React.Component {
             <div className="addressSelected_location">
               {this.props.LogNLat.name}
             </div>
-            <button
-              className="addressSelected_button"
-              type={"submit"}
-              onClick={e => {
-                this.onClearHandle(e);
-              }}
-            >
-              CLEAR
-            </button>
+            {this.props.layoutDimensions.width === 0 ? (
+              <button
+                className="addressSelected_button"
+                type={"submit"}
+                onClick={e => {
+                  this.onClearHandle(e);
+                }}
+              >
+                CLEAR
+              </button>
+            ) : null}
           </div>
         ) : (
           <div className="addressResult">{this.showResults()}</div>
@@ -68,6 +70,7 @@ class AddResult extends React.Component {
 
 const mapStateToProps = ({ nav }) => ({
   locationData: nav.LocationData,
+  layoutDimensions: nav.layoutDimensions,
   LogNLat: nav.LogNLat
 });
 

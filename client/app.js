@@ -6,6 +6,9 @@ import SiteInput from "./components/SiteInput/SiteInput";
 import MapLayout from "./components/MapLayout/MapLayout";
 import Sun from "./components/Sun/Sun";
 import DaySlider from "./components/DaySlider/DaySlider";
+import DateSelector from "./components/DateSelector/DateSelector";
+//testingUtil
+import { sunPos, percentageToColor } from "./Utils/sunUtils";
 //css
 import "./app.css";
 
@@ -19,6 +22,7 @@ class App extends React.Component {
         <SiteInput />
         <MapLayout />
         <DaySlider />
+        <DateSelector />
       </main>
     );
   }

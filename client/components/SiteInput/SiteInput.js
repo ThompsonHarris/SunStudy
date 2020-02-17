@@ -39,7 +39,9 @@ class SiteInput extends React.Component {
           x: j,
           y: i,
           object: { blocking: false, height: 0, shadow: 0 },
-          inShadow: false
+          inShadow: false,
+          thermal: 0,
+          thermalPer: 0
         };
       }
     }

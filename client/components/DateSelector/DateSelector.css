@@ -1,0 +1,32 @@
+.daySelector_form {
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+
+.daySelector_form_label {
+  text-transform: uppercase;
+  font-size: 2rem;
+  flex-grow: 0;
+  align-self: center;
+}
+
+.daySelector_form_input {
+  text-transform: uppercase;
+  font-size: 2rem;
+  background-color: black;
+  color: white;
+  flex-grow: 1;
+  align-self: center;
+  outline: none;
+  border: none;
+}
+
+.daySelector_form_button {
+  font-size: 2rem;
+  flex-grow: 0;
+  background-color: red;
+  color: white;
+  align-self: center;
+}

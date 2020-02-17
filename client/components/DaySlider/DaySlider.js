@@ -10,7 +10,6 @@ import "./DaySlider.css";
 
 class DaySlider extends React.Component {
   onValueChange = e => {
-    console.log(e.target.value);
     const name = this.props.LogNLat.name;
     const lat = this.props.LogNLat.data[0];
     const lng = this.props.LogNLat.data[1];
@@ -25,27 +24,33 @@ class DaySlider extends React.Component {
 
   render() {
     return (
-      <div className="daySlider">
-        <form className="daySlider_form">
-          <input
-            className="daySlider_form_input"
-            type="range"
-            name="day"
-            min="1"
-            max="24"
-            steps="24"
-            onChange={e => {
-              this.onValueChange(e);
-            }}
-          />
-        </form>
-      </div>
+      <>
+        {this.props.layoutDimensions.width > 0 ? (
+          <div className="daySlider">
+            <form className="daySlider_form">
+              <input
+                className="daySlider_form_input"
+                type="range"
+                name="day"
+                min="1"
+                max="24"
+                steps="24"
+                value={this.props.LogNLat.sunPos.date.getHours()}
+                onChange={e => {
+                  this.onValueChange(e);
+                }}
+              />
+            </form>
+          </div>
+        ) : null}
+      </>
     );
   }
 }
 
 const mapStateToProps = ({ nav }) => ({
-  LogNLat: nav.LogNLat
+  LogNLat: nav.LogNLat,
+  layoutDimensions: nav.layoutDimensions
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -27,8 +27,23 @@ export const renderGrid = data => ({
   payload: data
 });
 
+export const renderHeatmap = data => ({
+  type: NavTypes.RENDER_HEATMAP,
+  payload: data
+});
+
+export const setHeatmapRange = data => ({
+  type: NavTypes.SET_HEATMAP_RANGE,
+  payload: data
+});
+
 export const modCordinate = data => ({
   type: NavTypes.MOD_CORD,
+  payload: data
+});
+
+export const modOverCordinate = data => ({
+  type: NavTypes.MOD_OVER_CORD,
   payload: data
 });
 
